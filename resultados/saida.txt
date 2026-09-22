@@ -1,57 +1,57 @@
-=== POMAR (semente 20231045) ===
-. . ~ . . ~ . ~ . . . .
-~ ~ # # . # # ~ . ~ ~ ~
-# ~ . . . . ~ . # ~ . ~
-. # . # . ~ . ~ . ~ . #
-# # ~ . # . # ~ ~ ~ # ~
-~ # # . . . . . . . . .
-. . . . ~ . . . ~ ~ . ~
-. . ~ . . ~ . . . ~ ~ .
-. # . ~ . ~ ~ . . . ~ #
-. ~ ~ ~ ~ ~ # ~ ~ . # .
-# # ~ # . # ~ # . ~ ~ ~
-. ~ ~ . . . ~ . . # . .
-{'prevalencia': 0.0337, 'sensibilidade': 0.99, 'taxa_falso_positivo': 0.03, 'talhoes_por_semana': 1200}
-talhoes livres (estados): 118 de 144
+=== POMAR (semente 24114060) ===
+. . . ~ . # . . . . # .
+. . ~ ~ ~ # . . # . . .
+# . . ~ . . . . # . ~ .
+# ~ ~ . . . . ~ . . ~ .
+~ ~ ~ # . . ~ # . . ~ #
+. . # # . . . ~ ~ # ~ .
+. ~ . . . ~ . . . # ~ .
+. ~ ~ . ~ # . ~ . # ~ #
+# ~ . ~ . . ~ . . ~ . ~
+. . ~ . # # . . ~ . . .
+# . # . # ~ ~ . . . ~ .
+. ~ ~ . ~ . # # . . . .
+{'prevalencia': 0.0462, 'sensibilidade': 0.95, 'taxa_falso_positivo': 0.08, 'talhoes_por_semana': 800}
+talhoes livres (estados): 119 de 144
 
 === 2.2 e 3.1: TABELA (ordem de vizinhos: Norte, Sul, Oeste, Leste) ===
 | Estrategia | Heuristica | Custo | Passos | Nos expandidos | Fronteira max. | Tempo (ms) |
 |---|---|---:|---:|---:|---:|---:|
-| BFS | - | 55 | 22 | 114 | 13 | 0.147 |
-| DFS | - | 84 | 36 | 103 | 60 | 0.155 |
-| UCS | - | 34 | 22 | 111 | 23 | 0.245 |
-| A* | h1 (=0) | 34 | 22 | 111 | 23 | 0.210 |
-| A* | h2 (Manhattan) | 34 | 22 | 90 | 22 | 0.189 |
-| A* | h3 (4xManhattan) | 34 | 22 | 24 | 20 | 0.059 |
-BFS: custo 55, otimo 34 -> NAO e otima
-DFS: custo 84, otimo 34 -> NAO e otima
+| BFS | - | 46 | 22 | 117 | 11 | 0.195 |
+| DFS | - | 113 | 62 | 94 | 67 | 0.158 |
+| UCS | - | 27 | 24 | 109 | 14 | 0.267 |
+| A* | h1 (=0) | 27 | 24 | 109 | 14 | 0.322 |
+| A* | h2 (Manhattan) | 27 | 24 | 45 | 24 | 0.122 |
+| A* | h3 (4xManhattan) | 28 | 22 | 24 | 24 | 0.085 |
+BFS: custo 46, otimo 27 -> NAO e otima
+DFS: custo 113, otimo 27 -> NAO e otima
 
 === 3.2: onde a heuristica superestima o custo real ===
 h2 superestima em 0 talhoes
-h3 superestima em 114 talhoes
-   talhao (0, 0): h3 = 88, custo real restante = 34 (excesso 54)
-   talhao (0, 2): h3 = 80, custo real restante = 29 (excesso 51)
-   talhao (0, 1): h3 = 84, custo real restante = 33 (excesso 51)
+h3 superestima em 118 talhoes
+   talhao (0, 0): h3 = 88, custo real restante = 27 (excesso 61)
+   talhao (1, 0): h3 = 84, custo real restante = 26 (excesso 58)
+   talhao (0, 1): h3 = 84, custo real restante = 26 (excesso 58)
 h3 no talhao vizinho do objetivo (10, 11): h3 = 4, real = 1
 
 === 3.4: busca local (K = 15, 30 execucoes cada) ===
-focos de praga do mapa de risco: [(5, 10), (9, 4), (8, 9), (10, 6)]
+focos de praga do mapa de risco: [(9, 2), (1, 10), (11, 0), (8, 11)]
 
 === 1.4: dados da metrica perversa ===
-os 15 talhoes mais baratos de alcancar: 5 sao '~'
-risco coberto por eles: 1.1% do total
-risco coberto pelos 15 de MAIOR risco: 37.8% do total
-foco (5, 10): custo de acesso 21, posicao 50 de 115 no ranking de custo
-foco (9, 4): custo de acesso 25, posicao 84 de 115 no ranking de custo
-foco (8, 9): custo de acesso 23, posicao 71 de 115 no ranking de custo
-foco (10, 6): custo de acesso 36, posicao 111 de 115 no ranking de custo
-talhoes mais caros de alcancar: [(9, 11), (11, 0), (10, 6), (10, 11)]
-Subida de encosta  media 114.50  desvio 16.70  melhor 126.08  pior 36.17
-Tempera simulada   media 123.47  desvio 3.28  melhor 126.45  pior 115.14
-valores finais DISTINTOS da subida de encosta: 18 de 30
-execucoes que chegaram ao melhor valor global (126.45): subida 0, tempera 9
-comparacao pareada (mesmo inicio): tempera melhor em 22, igual em 2, pior em 6
-pioras aceitas pela tempera por execucao (media): 337
+os 15 talhoes mais baratos de alcancar: 6 sao '~'
+risco coberto por eles: 1.6% do total
+risco coberto pelos 15 de MAIOR risco: 43.6% do total
+foco (9, 2): custo de acesso 24, posicao 93 de 117 no ranking de custo
+foco (1, 10): custo de acesso 18, posicao 56 de 117 no ranking de custo
+foco (11, 0): custo de acesso 30, posicao 116 de 117 no ranking de custo
+foco (8, 11): custo de acesso 28, posicao 111 de 117 no ranking de custo
+talhoes mais caros de alcancar: [(6, 10), (11, 0), (6, 11), (10, 5)]
+Subida de encosta  media 86.29  desvio 13.99  melhor 97.38  pior 60.70
+Tempera simulada   media 97.00  desvio 0.29  melhor 97.38  pior 96.32
+valores finais DISTINTOS da subida de encosta: 19 de 30
+execucoes que chegaram ao melhor valor global (97.38): subida 3, tempera 6
+comparacao pareada (mesmo inicio): tempera melhor em 23, igual em 1, pior em 6
+pioras aceitas pela tempera por execucao (media): 580
 
 === 4.1 Traco de execucao (caso B) ===
 META inspecionar_prioridade_alta? tentando R3: SE infestacao_provavel ENTAO inspecionar_prioridade_alta
@@ -98,20 +98,20 @@ G sensor+ e folhas danificadas, pulverizado ha 2 dias    antes=inspecionar_prior
 casos que mudaram: 1 (esperado: 1, so o caso G)
 
 === 4.3 Bayes ===
-prev                       0.0337
-sens                       0.99
-fpr                        0.03
-n                          1200
-numerador                  0.033363
-falso_termo                0.028989
-vpp                        0.535075
-falsos_por_100             46.4925
-falsos_semana              34.7868
-horas_falsos               6.95736
-vpp_sens_999               0.537326
-vpp_fpr_metade             0.697132
-falsos_semana_fpr_metade   17.3934
-vpp_dois_testes            0.974345
+prev                       0.0462
+sens                       0.95
+fpr                        0.08
+n                          800
+numerador                  0.04389
+falso_termo                0.076304
+vpp                        0.36516
+falsos_por_100             63.484
+falsos_semana              61.0432
+horas_falsos               12.2086
+vpp_sens_999               0.376896
+vpp_fpr_metade             0.53497
+falsos_semana_fpr_metade   30.5216
+vpp_dois_testes            0.872294
 
 === BONUS: contraexemplo 8x8 para a DFS ===
 . . . . . . . .

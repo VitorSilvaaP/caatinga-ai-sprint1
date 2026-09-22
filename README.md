@@ -3,11 +3,11 @@
 ## 1. Identificação
 
 - **Disciplina:** Inteligência Artificial — UniRios — 2026.2 (Prof. Ronierison Maciel)
-- **Integrante 1:** `[NOME COMPLETO]` — matrícula `[MATRÍCULA]`
-- **Integrante 2:** `[NOME COMPLETO]` — matrícula `[MATRÍCULA]`
+- **Integrante 1:** `[Vitor da Silva Pereira]` — matrícula `[24114060]`
+- **Integrante 2:** `[Emylly Vitória Pereira de Sousa Silva]` — matrícula `[MATRÍCULA]`
 - **Matrícula usada como semente (integrante mais velho):** `[MATRÍCULA]`
 
-> ⚠ Os números deste repositório vieram da matrícula fictícia **20231045** (a do enunciado). Antes de entregar: rode `python src/main.py <sua matrícula>` e `python src/escala.py <sua matrícula>`, atualize o `RELATORIO.md` com os números de `resultados/saida.txt`, cole a tabela abaixo e faça commit.
+> ⚠ Os números vêm de `python src/main.py 24114060`. Falta rodar `python src/escala.py 24114060` neste computador e preencher a seção 2.4 do `RELATORIO.md`.
 
 ## 2. O que este projeto faz
 
@@ -24,16 +24,16 @@ python src/escala.py <matricula>     # Parte 2.4 (demora alguns minutos; usa mui
 python src/teste_afericao.py         # confere a caixa de aferição do enunciado
 ```
 
-## 4. Tabela-resumo dos resultados (semente 20231045)
+## 4. Tabela-resumo dos resultados (semente 24114060)
 
 | Estratégia | Heurística | Custo da rota (un.) | Passos (nº) | Nós expandidos (nº) | Fronteira máx. (nós) |
 |---|---|---:|---:|---:|---:|
-| BFS | - | 55 | 22 | 114 | 13 |
-| DFS | - | 84 | 36 | 103 | 60 |
-| UCS | - | 34 | 22 | 111 | 23 |
-| A\* | h1 (=0) | 34 | 22 | 111 | 23 |
-| A\* | h2 (Manhattan) | 34 | 22 | 90 | 22 |
-| A\* | h3 (4×Manhattan) | 34 | 22 | 24 | 20 |
+| BFS | - | 46 | 22 | 117 | 11 |
+| DFS | - | 113 | 62 | 94 | 67 |
+| UCS | - | 27 | 24 | 109 | 14 |
+| A\* | h1 (=0) | 27 | 24 | 109 | 14 |
+| A\* | h2 (Manhattan) | 27 | 24 | 45 | 24 |
+| A\* | h3 (4×Manhattan) | 28 | 22 | 24 | 24 |
 
 ## 5. Decisões declaradas
 
