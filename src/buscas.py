@@ -130,10 +130,18 @@ def dfs(grade, limite_s=None):
 
 
 # ----------------------------------------------------------------------
-# Heuristica h1 = 0 (usada pelo UCS). As outras entram no proximo commit.
+# Heuristicas (usadas pelo A*). h(s, objetivo) devolve uma estimativa.
 # ----------------------------------------------------------------------
 def h1(s, objetivo):
     return 0
+
+
+def h2(s, objetivo):                    # distancia de Manhattan
+    return abs(objetivo[0] - s[0]) + abs(objetivo[1] - s[1])
+
+
+def h3(s, objetivo):                    # 4 x Manhattan
+    return 4 * h2(s, objetivo)
 
 
 # ----------------------------------------------------------------------
@@ -177,3 +185,35 @@ def astar(grade, h=h1, limite_s=None):
 
 def ucs(grade, limite_s=None):
     return astar(grade, h1, limite_s)
+
+
+# ----------------------------------------------------------------------
+# Custo real de ir de uma origem a todos os talhoes (Dijkstra).
+# Serve para saber h*(s), o custo REAL restante, e checar admissibilidade.
+# ----------------------------------------------------------------------
+def distancias(grade, origem):
+    dist = {origem: 0}
+    heap = [(0, origem)]
+    while heap:
+        d, s = heapq.heappop(heap)
+        if d > dist[s]:
+            continue
+        for viz, c in vizinhos(grade, s):
+            if d + c < dist.get(viz, float("inf")):
+                dist[viz] = d + c
+                heapq.heappush(heap, (d + c, viz))
+    return dist
+
+
+def superestimacoes(grade, h):
+    """Lista os talhoes onde h(s) > custo real restante (h nao e admissivel).
+    Devolve [(excesso, estado, h(s), custo_real), ...] do pior para o menos ruim."""
+    n = len(grade)
+    objetivo = (n - 1, n - 1)
+    lista = []
+    for s in distancias(grade, (0, 0)):            # todos os talhoes alcancaveis
+        real = distancias(grade, s)[objetivo]
+        if h(s, objetivo) > real:
+            lista.append((h(s, objetivo) - real, s, h(s, objetivo), real))
+    lista.sort(reverse=True)
+    return lista
