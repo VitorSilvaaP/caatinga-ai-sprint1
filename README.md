@@ -67,3 +67,4 @@ python src/teste_afericao.py         # confere a caixa de aferição do enunciad
 - A **base de regras** não cobre o caso “armadilha positiva, seco, pulverizado há ≤ 14 dias” (`sem_conclusao`).
 - As fórmulas de complexidade citadas são as de AIMA cap. 3; conferir com a notação da Aula 03.
 - O item 4 da Parte 5 supõe leituras independentes do sensor.
+- **`gerador_pomar.py`:** o PDF do enunciado perdeu a indentação do código ao virar texto (todas as linhas apareceram com o mesmo recuo). Reconstruímos a indentação seguindo a lógica óbvia do algoritmo (a lógica é a mesma; só a formatação foi inferida). Os resultados batem com a caixa de aferição do enunciado (matrícula 20231045: UCS=34, BFS=55/22 passos), o que confirma que a lógica ficou igual à do professor.
