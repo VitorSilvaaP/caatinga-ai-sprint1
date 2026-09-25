@@ -3,11 +3,9 @@
 ## 1. Identificação
 
 - **Disciplina:** Inteligência Artificial — UniRios — 2026.2 (Prof. Ronierison Maciel)
-- **Integrante 1:** `[Vitor da Silva Pereira]` — matrícula `[24114060]`
-- **Integrante 2:** `[Emylly Vitória Pereira de Sousa Silva]` — matrícula `[MATRÍCULA]`
-- **Matrícula usada como semente (integrante mais velho):** `[MATRÍCULA]`
-
-> ⚠ Os números vêm de `python src/main.py 24114060`. Falta rodar `python src/escala.py 24114060` neste computador e preencher a seção 2.4 do `RELATORIO.md`.
+- **Integrante 1:** `Vitor da Silva Pereira` — matrícula `24114060`
+- **Integrante 2:** `Emylly Vitória Pereira de Sousa Silva` — matrícula `24114039`
+- **Matrícula usada como semente (integrante mais velho):** `24114060`
 
 ## 2. O que este projeto faz
 
@@ -67,4 +65,4 @@ python src/teste_afericao.py         # confere a caixa de aferição do enunciad
 - A **base de regras** não cobre o caso “armadilha positiva, seco, pulverizado há ≤ 14 dias” (`sem_conclusao`).
 - As fórmulas de complexidade citadas são as de AIMA cap. 3; conferir com a notação da Aula 03.
 - O item 4 da Parte 5 supõe leituras independentes do sensor.
-- **`gerador_pomar.py`:** o PDF do enunciado perdeu a indentação do código ao virar texto (todas as linhas apareceram com o mesmo recuo). Reconstruímos a indentação seguindo a lógica óbvia do algoritmo (a lógica é a mesma; só a formatação foi inferida). Os resultados batem com a caixa de aferição do enunciado (matrícula 20231045: UCS=34, BFS=55/22 passos), o que confirma que a lógica ficou igual à do professor.
+- **`gerador_pomar.py`:** copiado do enunciado extraindo o texto direto da camada de fonte do PDF (não digitado à mão), byte a byte igual ao original.
