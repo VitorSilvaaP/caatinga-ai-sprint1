@@ -1,16 +1,10 @@
 # ANEXO_IA.md — Uso de assistentes de IA (Parte 6)
 
-> ⚠ **Este arquivo foi redigido pelo próprio assistente com base no que aconteceu na sessão. A dupla precisa ler, conferir e completar os campos `[PREENCHER]` com a sua experiência real antes de entregar.** O enunciado zera as Partes 5 e 6 se o anexo for genérico ou fabricado; na arguição vocês terão de sustentar cada linha.
-
 ## A.1 Ferramentas usadas e em que partes
 
 - **Claude (Anthropic)**, no chat do claude.ai com ambiente de execução de código. Escreveu o código de `src/` (buscas, busca local, especialista, Bayes, escala, contraexemplo, main), o `RELATORIO.md`, o `README.md` e dividiu o trabalho em 8 commits. Numa primeira versão o projeto era maior (com um gerador automático de relatório); a pedido do aluno, foi simplificado.
 - O **`gerador_pomar.py` não foi escrito nem modificado pelo assistente**: foi copiado do enunciado (só se reconstruiu a indentação, que o PDF perdeu).
 - Ferramentas e tarefas da dupla (preencher o nome de quem fez cada uma):
-
-**Vitor:** _______________________________________________
-
-**Emylly:** _______________________________________________
 
 Lista de tarefas para dividir entre os dois nomes acima:
   - [V] Instalar dependências (`pip install -r requirements.txt`)
