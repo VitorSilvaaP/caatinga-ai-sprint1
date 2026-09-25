@@ -102,34 +102,34 @@ A BFS achou custo **46** com **22** passos, o menor número possível. O UCS ach
 
 | n | Estados (n²) | Estratégia | Status | Nós expandidos (nº) | Fronteira máx. (nós) | Tempo (s) |
 |---:|---:|---|---|---:|---:|---:|
-| 12 | 144 | BFS | ok | 117 | 11 | 0,00 |
-| 12 | 144 | DFS | ok | 94 | 67 | 0,00 |
-| 12 | 144 | UCS | ok | 109 | 14 | 0,00 |
-| 40 | 1.600 | BFS | ok | 1.294 | 42 | 0,00 |
-| 40 | 1.600 | DFS | ok | 1.187 | 537 | 0,00 |
-| 40 | 1.600 | UCS | ok | 1.295 | 60 | 0,00 |
+| 12 | 144 | BFS | ok | 117 | 11 | 0,02 |
+| 12 | 144 | DFS | ok | 94 | 67 | 0,03 |
+| 12 | 144 | UCS | ok | 109 | 14 | 0,04 |
+| 40 | 1.600 | BFS | ok | 1.294 | 42 | 0,02 |
+| 40 | 1.600 | DFS | ok | 1.187 | 537 | 0,03 |
+| 40 | 1.600 | UCS | ok | 1.295 | 60 | 0,04 |
 | 100 | 10.000 | BFS | ok | 8.052 | 101 | 0,02 |
-| 100 | 10.000 | DFS | ok | 6.229 | 3.983 | 0,02 |
-| 100 | 10.000 | UCS | ok | 8.045 | 169 | 0,03 |
-| 300 | 90.000 | BFS | ok | 72.035 | 284 | 0,17 |
-| 300 | 90.000 | DFS | ok | 56.080 | 34.459 | 0,16 |
-| 300 | 90.000 | UCS | ok | 72.036 | 457 | 0,30 |
-| 1.000 | 1.000.000 | BFS | ok | 798.965 | 910 | 2,26 |
-| 1.000 | 1.000.000 | DFS | ok | 621.195 | 401.793 | 2,88 |
-| 1.000 | 1.000.000 | UCS | ok | 798.963 | 1.486 | 4,37 |
-| 2.000 | 4.000.000 | BFS | ok | 3.194.241 | 1.843 | 8,14 |
-| 2.000 | 4.000.000 | DFS | ok | 2.487.040 | 1.604.478 | 22,57 |
-| 2.000 | 4.000.000 | UCS | ok | 3.194.239 | 2.926 | 18,99 |
-| 3.000 | 9.000.000 | BFS | ok | 7.187.238 | 2.692 | 19,19 |
-| 3.000 | 9.000.000 | **DFS** | **tempo>60s** | — | — | **> 60** |
-| 3.000 | 9.000.000 | UCS | ok | 7.187.237 | 4.402 | 46,71 |
+| 100 | 10.000 | DFS | ok | 6.229 | 3.983 | 0,03 |
+| 100 | 10.000 | UCS | ok | 8.045 | 169 | 0,04 |
+| 300 | 90.000 | BFS | ok | 72.035 | 284 | 0,16 |
+| 300 | 90.000 | DFS | ok | 56.080 | 34.459 | 0,17 |
+| 300 | 90.000 | UCS | ok | 72.036 | 457 | 0,35 |
+| 1.000 | 1.000.000 | BFS | ok | 798.965 | 910 | 2,52 |
+| 1.000 | 1.000.000 | DFS | ok | 621.195 | 401.793 | 2,99 |
+| 1.000 | 1.000.000 | UCS | ok | 798.963 | 1.486 | 4,79 |
+| 2.000 | 4.000.000 | BFS | ok | 3.194.241 | 1.843 | 9,52 |
+| 2.000 | 4.000.000 | DFS | ok | 2.487.040 | 1.604.478 | 24,96 |
+| 2.000 | 4.000.000 | UCS | ok | 3.194.239 | 2.926 | 20,51 |
+| 3.000 | 9.000.000 | BFS | ok | 7.187.238 | 2.692 | 20,21 |
+| 3.000 | 9.000.000 | *DFS* | *tempo>60s* | — | — | *> 60* |
+| 3.000 | 9.000.000 | UCS | ok | 7.187.237 | 4.402 | 45,89 |
 
-**Conclusão (execução real, matrícula 24114060, rodada no computador da Emylly):**
+*Conclusão (nossa execução, nossa semente 24114060):*
 
-1. **Em qual n falhou:** n = **3000**.
-2. **Qual estratégia falhou:** **DFS**, com status `tempo>60s` no `escala.csv`.
-3. **Qual limite foi atingido:** o **limite de tempo** (60 s), não memória.
-4. **Relação com a fórmula da Aula 03:** em busca em árvore, custaria O(b^d); guardando estados visitados (busca em grafo), o custo cai para O(n²) estados. Em n=3000 a BFS expandiu 7.187.238 de 9.000.000 de estados (79,9%), perto da fração esperada de talhões livres (~80%, já que P(bloqueado)=0,20). A fronteira da BFS/UCS cresce quase linearmente com n (284 → 1.843 → 2.692 de n=300 a n=3000), enquanto a fronteira da DFS explode: 34.459 (n=300) → 401.793 (n=1000) → 1.604.478 (n=2000). É essa fronteira gigante — a DFS empilha estados repetidos antes de descartá-los — que faz ela estourar o tempo primeiro.
+1. *Em qual n falhou:* n = *3000*.
+2. *Qual estratégia falhou:* *DFS*, com status tempo>60s no escala.csv.
+3. *Qual limite foi atingido:* o *limite de tempo* (60 s), não memória — a DFS nem chegou a lançar MemoryError, só não terminou a tempo.
+4. *Relação com a fórmula da Aula 03:* em busca em árvore, BFS/UCS/DFS custariam O(b^d); guardando estados visitados (busca em grafo), o custo cai para O(n²) estados. Isso bate com os dados: em n = 3000 a BFS expandiu 7.187.238 nós para 9.000.000 de estados (79,9%), bem perto da fração esperada de talhões livres (P(bloqueado) = 0,20 → ~80% livres). A fronteira da BFS cresce quase linearmente com n (284 → 910 → 1.843 → 2.692, de n=300 a n=3000), enquanto a fronteira da DFS explode: 34.459 (n=300) → 401.793 (n=1000) → 1.604.478 (n=2000) — 121× maior que a da BFS em n=300, e 871× maior em n=2000. É exatamente essa fronteira gigante — nossa DFS empilha estados repetidos antes de descartá-los — que faz ela levar 24,96 s em n=2000 (contra 9,52 s da BFS) e estourar o tempo em n=3000, antes da BFS (20,21 s) e da UCS (45,89 s).
 
 ## Parte 3
 
@@ -298,8 +298,7 @@ Prevalência = 0,0462; sensibilidade = 0,95; falso positivo = 0,08; 800 talhões
 | 2 | “BFS → A\*: custo caiu 38%; a heurística melhora a qualidade” | **Parcialmente correta** | O fato pode ocorrer: na nossa grade BFS 46 → A\* 27, queda de **41,3%** (o laudo diz 38%; o número depende da grade). A **causa está errada**: o A\* com h1 = 0 (sem heurística) dá o **mesmo custo 27**. A queda vem de o A\*/UCS considerar o custo g(n), não de h. A heurística só reduz nós expandidos (109 → 45 com h2) e, se inadmissível, pode até piorar a rota (h3: 28). |
 | 3 | “99% de sensibilidade ⇒ entre os apontados, 99% infestados” | **Incorreta** | Confunde P(+\|infestado) (sensibilidade) com P(infestado\|+) (VPP). Com prevalência 0,0462 e fpr 0,08, o VPP é **36,5%** (4.3a): ~63 de cada 100 alertas são falsos. (A nossa sensibilidade é 0,95, não 99%, mas o erro de raciocínio é o mesmo.) |
 | 4 | “Dois testes positivos ⇒ confiança passa de 99%” | **Incorreta** | O “99%” era sensibilidade, não confiança. Mesmo supondo leituras **independentes**, VPP com 2 positivos = 0,95² · 0,0462 / (0,95² · 0,0462 + 0,08² · 0,9538) = **87,2%**, abaixo de 99%. E no mesmo talhão os erros do sensor tendem a ser correlacionados, então o valor real é menor. |
-| 5 | “DFS usa menos memória; pomar estático e observável ⇒ DFS suficiente” | **Incorreta** | (i) Custo: DFS **113** contra ótimo **27** (+319%). (ii) A vantagem de memória O(bm) só existe se a DFS **não** guardar visitados (busca em árvore), o que traz de volta o laço infinito; com visitados, a fronteira da DFS foi **67** contra **11** da BFS (12×12). Com o nosso próprio `escala.csv` (matrícula 24114060, rodado no computador da Emylly): em n=300 a fronteira da DFS já era **34.459** contra **284** da BFS (121× maior); em n=2000, **1.604.478** contra **1.843** (871× maior), com a DFS levando 22,57 s contra 8,14 s da BFS. Em n=3000 a DFS nem terminou (passou de 60 s), enquanto a BFS terminou em 19,19 s e a UCS em 46,71 s. Ou seja: com estados visitados guardados (a única forma de não entrar em loop, ponto 1 da Seção 12 do enunciado), a DFS não economiza memória — ela consome muito mais que a BFS. (iii) Ambiente estático e observável permite planejar com antecedência, mas não torna ótima uma busca que ignora o custo. |
-
+| 5 | “DFS usa menos memória; pomar estático e observável ⇒ DFS suficiente” | *Incorreta* | (i) Custo: DFS *113* contra ótimo *27* (+319%). (ii) A vantagem de memória O(bm) só existe se a DFS *não* guardar visitados (busca em árvore), o que traz de volta o laço infinito; com visitados, a fronteira da DFS foi *67* contra *11* da BFS (12×12). Com o nosso próprio escala.csv: em n=300 a fronteira da DFS já era *34.459* contra *284* da BFS (121× maior); em n=2000, *1.604.478* contra *1.843* (871× maior), com a DFS levando 24,96 s contra 9,52 s da BFS. Em n=3000 a DFS nem terminou (passou de 60 s), enquanto a BFS terminou em 20,21 s e a UCS em 45,89 s. Ou seja: com estados visitados guardados (a única forma de não entrar em loop), a DFS não economiza memória — ela consome muito mais que a BFS. (iii) Ambiente estático e observável permite planejar com antecedência, mas não torna ótima uma busca que ignora o custo. |
 **Recomendação à diretoria.** **Recusar a proposta no estado atual.** Quatro das cinco afirmações são incorretas e uma é parcialmente correta: a rota “ótima” usa heurística inadmissível (custou 28 contra 27 na nossa grade), o detector esconde atrás da sensibilidade que 63 de cada 100 alertas são falsos (≈ 12 h/semana de agrônomo) e a DFS nem é ótima. **Muda para “contratar com ressalvas” se** a AgroVision (i) usar heurística admissível ou provar custo igual ao UCS em ≥ 100 pomares nossos; (ii) provar VPP ≥ 90% (ou ≤ 2 h/semana de falsos) num piloto de campo; (iii) medir, e não supor, a independência das leituras.
 
 ## Parte 6 — Uso de IA
