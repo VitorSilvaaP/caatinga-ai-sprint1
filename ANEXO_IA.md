@@ -937,4 +937,4 @@ O que você ainda precisa fazer
 
 ## A.4 O que eu sabia depois de rodar o código que não sabia lendo a resposta do assistente
 
-`[PREENCHER — uma frase da dupla com algo que só o experimento mostrou. Exemplos de fatos que este experimento revela (escolham só se for verdade para vocês): a BFS pode devolver rota 62% mais cara que a ótima mesmo com o menor número de passos; a DFS estoura o tempo antes da BFS por causa da fronteira enorme.]`
+`Só rodando o experimento de escala vimos que a DFS usa muito mais memória que a BFS, não menos. Antes de medir, parecia o contrário — a fronteira da DFS chegou a ser quase 900 vezes maior que a da BFS.`
